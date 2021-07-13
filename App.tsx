@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { ReactElement, useEffect } from 'react';
+import { StatusBar } from 'react-native';
 
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native';
+import Updates from 'expo-updates';
+import FlashMessage from 'react-native-flash-message';
+
+import AppProvider from '~/hooks';
+import Routes from '~/routes';
+
+export default function App(): ReactElement {
+  useEffect(() => {
+    async function updateApp(): Promise<void> {
+      if (!__DEV__) {
+        const { isAvailable } = await Updates.checkForUpdateAsync();
+
+        if (isAvailable) {
+          await Updates.fetchUpdateAsync();
+
+          await Updates.reloadAsync();
+        }
+      }
+    }
+    updateApp();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AppProvider>
+        <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+        <Routes />
+        <FlashMessage position="top" />
+      </AppProvider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
