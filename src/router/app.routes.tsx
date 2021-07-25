@@ -5,7 +5,7 @@ import {
   TransitionPresets,
 } from '@react-navigation/stack';
 
-import { Home } from '../screens';
+import { Home } from '~/screens';
 
 const App = createStackNavigator();
 

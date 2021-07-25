@@ -6,11 +6,7 @@ import React, { ReactElement } from 'react';
 import AppRoutes from './app.routes';
 
 function Routes(): ReactElement {
-  return (
-    <>
-      <AppRoutes />
-    </>
-  );
+  return <AppRoutes />;
 }
 
 export default Routes;

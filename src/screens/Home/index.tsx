@@ -1,22 +1,13 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { Text } from 'react-native';
+import React, { ReactElement } from 'react';
 
-import { Input } from '~/components/atoms';
+import { Container, Text } from './styles';
 
-import { Container } from './styles';
-
-interface HomeProps {
-  children: ReactNode;
-}
-
-function Home({ children }: HomeProps): ReactElement {
+function Home(): ReactElement {
   return (
     <Container>
       <Text>Home</Text>
-      <Input />
-      {children}
     </Container>
   );
 }
 
-export { Home };
+export default Home;

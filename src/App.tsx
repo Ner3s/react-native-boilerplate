@@ -25,11 +25,11 @@ export default function App(): ReactElement {
     updateApp();
   }, []);
   return (
-    <ThemeProvider theme={light}>
-      <NavigationContainer>
+    <NavigationContainer>
+      <ThemeProvider theme={light}>
         <StatusBar backgroundColor="#222" />
         <Routes />
-      </NavigationContainer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }

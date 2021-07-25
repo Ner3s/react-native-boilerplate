@@ -19,7 +19,6 @@ function Input({
   placeholderTextColor,
   multiline,
   disabled,
-  style,
   ...rest
 }: IInputProps): ReactElement {
   const inputRef = useRef(null);
