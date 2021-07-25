@@ -12,5 +12,5 @@ export const Container = styled.View<IContainerProps>`
 
 export const TInput = styled.TextInput`
   flex: 1;
-  border: 1px solid red;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
 `;

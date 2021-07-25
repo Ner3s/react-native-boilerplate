@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { Text } from 'react-native';
 
-import { Input } from '~/components';
+import { Input } from '~/components/atoms';
 
 import { Container } from './styles';
 
@@ -19,4 +19,4 @@ function Home({ children }: HomeProps): ReactElement {
   );
 }
 
-export default Home;
+export { Home };

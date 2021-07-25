@@ -1,9 +1,9 @@
 import React, { ReactElement, useRef } from 'react';
-import { TextInputProps, TextStyle } from 'react-native';
+import { TextStyle } from 'react-native';
 
 import * as S from './styles';
 
-interface IInputProps extends TextInputProps {
+interface IInputProps {
   // name: string;
   width?: string | number;
   height?: string | number;
@@ -39,4 +39,4 @@ function Input({
   );
 }
 
-export default Input;
+export { Input };
